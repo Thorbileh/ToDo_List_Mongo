@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class ="flex_Item">
+                <div class="init">
+                    <h6 class='initials'>PM</h6>
+                    <h5 class='name'>Precious Masilela</h5>
+                </div>
+
+                <input type="text" name="search" placeholder='Search' class='search'></input>
+                <img class='i11' src="/images/loupe.png" width="300px"></img>
+                <div class='menu'>
+                    <img class="i1" src="/images/sun.png"></img>
+                    <h5 class='Myday'> My Day</h5>
+                    <h5 class='important'><img class="i2" src="/images/star.png"></img>Important</h5>
+                    <h5 class='Planned'><img class="i3" src="/images/check-list.png"></img>Planned</h5>
+                    <h5 class='All'><img class="i4" src="/images/infinity.png"></img>All</h5>
+                    <h5 class='completed'><img class="i5" src="/images/checked.png"></img>Completed</h5>
+                    <h5 class ='tome'><img class="i6" src="/images/user.png"></img>Assigned to me</h5>
+                    <h5 class ='task'><img class="i7" src="/images/to-do-list"></img>Tasks</h5>
+                    <h5 class ='line'></h5>
+                    <h5 class ='group'><img class ="i8" src="/images/folder.png"></img>Untitle group</h5>
+                    <h5 class ='toDo'><img class="i9" src="/images/menu.png"></img>ToDo</h5>
+                </div>
+                <label class='new'> <input type="text" placeholder='+  New List' class='list'
+                         >
+                    </input><button type="submit" class='but' > <img class="i10"
+                            src="/images/add.png"></img></button></label>
+
+            </div>
+            <div class='flex_item'>
+                <h2 class='ToDower'>ToDo</h2>
+
+                    
+                        <% todoTasks.forEach(details=> { %>
+                            <div class="todo-list-item">
+                                <div class="todo-list-item-name">
+                                    <div class="buttons">
+                                        <a  href="/edit/<%= details._id %>"><img class='i20' src="/images/edit-text.png"></img></a>
+                                        <a href="/remove/<%= details._id %>"><img class ='i21' src="/images/remove.png"></img></a>
+                                        </div>
+                                    <img class='i19' src="/images/empty.png"></img>
+                                    <h5 class='doing'><%= details.content %></h5>
+                                  
+                                    
+                                </div>
+                               
+                           
+                            </div>
+                            <% }) %>
+                            
+               
+                <div class ='butH'>
+                    <button class='icon'><img class="i17" src='/images/add-user.png'></img></button>
+                    <button class ='icon2'><img class="i18" src="/images/more.png"></img></button>
+                </div>
+
+                <form action="/" method="POST" class="todo-header">
+                    <input type="text" placeholder='+         Add a Task' class='newTask' name="content"></input>
+                    <button type="submit" class='Addto'>Add To Task</button>
+                </form>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
